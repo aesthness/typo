@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <div class="head"></div>
+        <p id="content" style="padding: 30px; font-size: 24px;">  
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet velit sed varius finibus. Ut consectetur posuere feugiat. Donec non commodo erat. Nam consequat lorem quis libero hendrerit, non vehicula augue lobortis. Sed blandit sapien ut augue accumsan iaculis. Aenean et sollicitudin felis. Vestibulum et risus rhoncus, cursus erat id, consequat erat. Maecenas ornare sapien diam. Phasellus congue elit convallis tincidunt tincidunt. Mauris eu orci malesuada, aliquam neque et, faucibus nibh. Morbi mollis augue ac euismod aliquet. Sed convallis ipsum at auctor commodo. Donec luctus dapibus felis, vitae vehicula turpis tristique ut.
+            Suspendisse potenti. Proin tincidunt urna sed purus mollis, vel auctor lorem sollicitudin. Phasellus sed fringilla metus, id hendrerit libero. Ut et est ex. Ut elementum velit vel eros interdum, nec sagittis lectus dictum. Etiam in libero et purus eleifend molestie sed vel urna. Integer condimentum posuere erat.
+            Proin ornare arcu nisl, sit amet gravida justo pellentesque volutpat. Vivamus consectetur leo in lorem ornare lobortis. In ac condimentum ex, quis rhoncus purus. Nam justo massa, bibendum eget urna non, suscipit ornare dolor. Morbi nec lacus bibendum, fringilla metus vel, tempus nibh. Curabitur fringilla pretium tristique. Phasellus commodo libero libero, eu consectetur nibh ullamcorper vitae. Sed vitae nunc non elit congue vestibulum rutrum eu justo.
+        </div>
+        <div class="footer"></div>
+    </div>
+    <div class="nav">
+        <select id="fontSelector" onchange="changeFont(this.value)" class="custom-select">
+            <option value="Minion Variable Concept">Minion Variable Concept</option>
+            <option value="Noto Sans KR">Noto Sans KR</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Arial">Arial</option>
+          </select>          
+        <button onclick="decreaseFont()">-</button>
+        <span id="fontSizeDisplay">24px</span>
+        <button onclick="increaseFont()">+</button>
+    </div>
+    <script>
+        let currentSize = 24;
+        const content = document.getElementById('content');
+        const fontSizeDisplay = document.getElementById('fontSizeDisplay');
+      
+        function updateFontSizeDisplay() {
+          fontSizeDisplay.textContent = currentSize + 'px';
+        }
+      
+        function increaseFont() {
+          currentSize += 2;
+          content.style.fontSize = currentSize + 'px';
+          updateFontSizeDisplay();
+        }
+      
+        function decreaseFont() {
+          if (currentSize > 10) {
+            currentSize -= 2;
+            content.style.fontSize = currentSize + 'px';
+            updateFontSizeDisplay();
+          }
+        }
+      
+        function changeFont(fontName) {
+          content.style.fontFamily = fontName;
+        }
+      
+        updateFontSizeDisplay();
+      </script>
+      
+</body>
+</html>
